@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+
+    </div>
+    <button onclick="changeView()">
+        Increment
+    </button>
+    <script>
+        var count = -1;
+        // bgcolor = 'white';
+        // document.querySelector('div').innerHTML = count;
+        changeView();
+        // document.querySelector('button').addEventListener('click', changeView);
+        function changeView() {
+            // count = count + 1;
+            count++;
+            document.querySelector('div').innerHTML = count;
+            // if (count % 2 == 0) { bgcolor = 'red' } else { bgcolor = 'green' }
+            bgcolor = count % 2 == 0 ? 'red' : 'green'; // ternary operator condtion?'do if true':'do if false'
+            document.querySelector('body').style.backgroundColor = bgcolor;
+        }
+    </script>
+</body>
+
+</html>

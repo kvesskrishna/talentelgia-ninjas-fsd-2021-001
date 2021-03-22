@@ -1,0 +1,47 @@
+<head>
+    <style>
+        .red {
+            background-color: red;
+
+        }
+
+        .yellow {
+            background-color: yellow !important
+        }
+
+        div {
+            background-color: blue;
+        }
+
+        #div1 {
+            background-color: black;
+        }
+
+        #div2 {
+            background-color: green !important
+        }
+
+        body div:first-child {
+            background-color: orange
+        }
+
+        /* target the first div of body tag */
+        /* div - 1
+        .div - 10
+        #div - 100 */
+    </style>
+</head>
+
+<body>
+    <div class="red" id="div1">
+        this is a div
+    </div>
+    <div style="background-color: brown" class="yellow" id="div2">
+        this is another div
+    </div>
+</body>
+
+Create a css rule with properties that can shape the element. Be cautious with key, value pairs of the property. Don't
+use quoted strings, rather use template literals.
+
+template/string literals `hello world` 'hello world'
