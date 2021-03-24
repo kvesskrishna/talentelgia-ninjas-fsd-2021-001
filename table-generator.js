@@ -36,11 +36,19 @@ document.querySelector('table thead tr').innerHTML = row; // generate table head
 // generate rows
 row = ''; // reinitialising rows variable to be empty
 for (var i = 0; i < data.length; i++) { // looping through every user object in users array
+
+
+
     var keys = Object.keys(data[i]); // capturing the keys of that particular user
     console.log(keys)
     var record = ''; // placeholder for td for each key
     for (var j = 0; j < cols.length; j++) { // loop on every key for that user
-
+        console.log('type of ' + cols[j], typeof data[i][cols[j]])
+        // check if the values are direct variables or functions
+        if (typeof data[i][cols[j]] == 'function') {
+            data[i][cols[j]] = data[i][cols[j]]();
+        }
+        // console.log(data[i].price, data[i]['finalPrice']())
         console.log('data', data[i][cols[j]])
         record += `<td>${data[i][cols[j]] ? data[i][cols[j]] : ''}</td>`;
         // logic as in line 39

@@ -16,9 +16,10 @@
         <tbody></tbody>
     </table>
     <script>
-        var data = [{ id: 123, title: 'HTML', duration: '3 months', price: 2343, available: 'false' }, { id: 543, title: 'CSS', duration: '4 months', price: 2643, discount: 15 }, { id: 765, image: 'http://placehold.it/', title: 'js', duration: '6 months', price: 7343 }, { id: 543, title: 'Angular', price: 12343 },]
+        var data = [{ id: 123, title: 'HTML', duration: '3 months', finalPrice: function () { return this.price; }, price: 2343, available: 'false' }, { id: 543, title: 'CSS', duration: '4 months', price: 2643, discount: 15, finalPrice: function () { return this.price - ((this.discount * this.price) / 100) } }, { id: 765, image: 'http://placehold.it/', title: 'js', duration: '6 months', price: 7343 }, { id: 543, title: 'Angular', price: 12343 },]
     </script>
     <script src='table-generator.js'></script>
+    <script src='arrays.js'></script>
 </body>
 
 </html>
