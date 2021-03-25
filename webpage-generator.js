@@ -10,3 +10,10 @@ webpagedata.items.forEach((item, index) => {
     setItemBoxContent(index)
 })
 
+regFormContainer()
+
+body.insertBefore(document.createElement('hr'), document.getElementById('regForm'))
+remarkContainer()
+remarks()
+regForm()
+regFormFields()

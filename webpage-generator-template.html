@@ -25,18 +25,23 @@
                 { id: 5, description: 'lorem ipsum dolor sit amet, consectet', title: 'React', price: 15, thumbnail: 'http://via.placeholder.com/150', rating: 4 },
             ],
             remarks: [
-                { testimonial: 'lorem', author: 'james', image: 'http://via.placeholder.com/150' },
-                { testimonial: 'lorem', author: 'jack', image: 'http://via.placeholder.com/150' },
-                { testimonial: 'lorem', author: 'jajmes', image: 'http://via.placeholder.com/150' },
+                { testimonial: 'lorem', author: 'james', image: 'http://via.placeholder.com/50' },
+                { testimonial: 'lorem', author: 'jack', image: 'http://via.placeholder.com/50' },
+                { testimonial: 'lorem', author: 'jajmes', image: 'http://via.placeholder.com/50' }, { testimonial: 'lorem', author: 'jajmes', image: 'http://via.placeholder.com/50' }, { testimonial: 'lorem', author: 'jajmes', image: 'http://via.placeholder.com/50' }, { testimonial: 'lorem', author: 'jajmes', image: 'http://via.placeholder.com/50' },
             ],
-            regForm: [
-                { type: 'input', name: 'fname', validators: { required: true, email: false, password: false, minlength: 4 } },
-                { type: 'input', name: 'lname', validators: { required: true, email: false, password: false, minlength: 4 } },
-                { type: 'email', name: 'email', validators: { required: true, email: true, password: false, minlength: 0 } },
-                // checkbox set with courses from courses array
-                { type: 'password', name: 'pwd', validators: { required: true, email: false, password: true, minlength: 8 } },
-                { type: 'submit', name: 'submit' },
-            ],
+            regForm: {
+                name: 'registrationForm',
+                method: 'POST',
+                action: 'register.php',
+                fields: [
+                    { type: 'text', name: 'fname', validators: { required: true, minlength: 4 } },
+                    { type: 'text', name: 'lname', validators: { required: true, minlength: 4 } },
+                    { type: 'email', name: 'email', validators: { required: true, minlength: 0 } },
+
+                    { type: 'password', name: 'pwd', validators: { required: true, minlength: 8 } },
+                    { type: 'submit', name: 'submit' },
+                ]
+            },
             footer: 'All rights reserved. copy - 2021'
         }
     </script>

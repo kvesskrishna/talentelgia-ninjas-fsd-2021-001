@@ -85,6 +85,68 @@ const setItemBoxContent = (index) => {
 }
 
 
+const regFormContainer = () => {
+    rfheadnode = document.createElement('div');
+    rfheadnode.style.textAlign = 'center'
+    rfheadnode.setAttribute('id', 'regForm')
+    rfheadnode.appendChild(document.createElement('h1')).innerText = 'Registration Form';
+    body.insertBefore(rfheadnode, footer);
+}
+
+const remarkContainer = () => {
+
+    remnode = document.createElement('div');
+    remnode.setAttribute('id', 'remarks');
+    body.insertBefore(remnode, rfheadnode);
+    remnode.appendChild(document.createElement('h1')).innerHTML = 'Testimonials<div></div>';
+
+}
+
+const remarks = () => {
+    remdata = webpagedata.remarks;
+    remdata.forEach(remark => {
+        let remdiv = document.createElement('div');
+        remdiv.className = 'remark';
+        remnode.appendChild(remdiv);
+        let rimg = document.createElement('img')
+        rimg.setAttribute('src', remark.image);
+        remdiv.appendChild(rimg);
+        let rtest = document.createElement('p');
+        rtest.innerHTML = remark.testimonial + '<br>' + remark.author;
+        remdiv.appendChild(rtest);
+
+        // remdiv.appendChild(document.createElement('p')).innerHTML = remark.testimonial + '<br>' + remark.author;
+
+    })
+}
+
+
+const regForm = () => {
+    rf = document.createElement('form');
+    rf.setAttribute('name', webpagedata.regForm.name)
+    rf.setAttribute('method', webpagedata.regForm.method)
+    rf.setAttribute('action', webpagedata.regForm.action)
+    rfheadnode.appendChild(rf);
+}
+const regFormFields = () => {
+
+    let fielddata = webpagedata.regForm.fields;
+    fielddata.forEach(field => {
+        if (field.type == 'text' || field.type == 'password' || field.type == 'email' || field.type == 'submit') {
+            let f = document.createElement('input');
+            f.setAttribute('type', field.type);
+            f.setAttribute('name', field.name);
+            f.setAttribute('placeholder', field.name.toUpperCase());
+            if (field.validators && field.validators.required) {
+                f.setAttribute('required', field.validators.required);
+            }
+            if (field.validators && field.validators.minlength) {
+                f.setAttribute('minlength', field.validators.minlength);
+            }
+            rf.appendChild(f);
+        }
+    })
+}
     // body.innerHTML = `<h1>${webpagedata.title}</h1>`
 
     //create a test div

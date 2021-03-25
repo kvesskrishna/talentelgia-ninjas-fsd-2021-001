@@ -1,6 +1,21 @@
-#item-box-container {
+#item-box-container,
+#remarks {
   display: flex;
   justify-content: space-around;
+  width: 100vw;x
+}
+.remark {
+  background: white;
+  border-right: 1px solid grey;
+  width: 300px;
+}
+#remarks p {
+  display: inline;
+}
+#remarks img {
+  /* width: 50px;
+  height: 50px; */
+  border-radius: 50%;
 }
 .item-box {
   width: 200px;
@@ -10,4 +25,16 @@
   border: 1px solid black;
   border-radius: 5px;
   margin: 10px;
+}
+#regForm input {
+  display: block;
+  margin: 5px;
+}
+
+#regForm form {
+  border: 1px solid #666;
+  border-radius: 5px;
+  padding: 5px;
+  width: 33%;
+  margin-left: 33%;
 }
