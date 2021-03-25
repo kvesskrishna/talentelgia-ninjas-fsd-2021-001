@@ -6,21 +6,24 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="webpage-generator.css">
 </head>
 
 <body>
+    <script>console.log('test script');</script>
+    <script>console.log('test script 2');</script>
     <script>
         const webpagedata = {
-            title: 'Courses',
+            title: 'Our Courses',
             bgcolor: 'wheat',
             fontColor: '#333',
-            courses: [
+            items: [
                 { id: 1, title: 'PHP', price: 10, discount: 10, thumbnail: 'http://placehold.it', rating: 5 },
                 { id: 2, title: 'HTML', price: 6, discount: 3, thumbnail: 'http://placehold.it', rating: 4 },
                 { id: 3, title: 'JS', price: 12, discount: 5, thumbnail: 'http://placehold.it', rating: 5 },
                 { id: 4, title: 'Angular', price: 15, discount: 2, thumbnail: 'http://placehold.it', rating: 3 },
             ],
-            testimonials: [
+            remarks: [
                 { testimonial: 'lorem', author: 'james', image: 'http://placehold.it' },
                 { testimonial: 'lorem', author: 'jack', image: 'http://placehold.it' },
                 { testimonial: 'lorem', author: 'jajmes', image: 'http://placehold.it' },
@@ -36,6 +39,7 @@
             footer: 'All rights reserved. copy - 2021'
         }
     </script>
+    <script src='webpage-generator.main.js'></script>
     <script src="webpage-generator.js"></script>
 </body>
 
