@@ -61,12 +61,35 @@ const createItemBox = () => {
 
 }
 
+const setItemBoxContent = (index) => {
+    let itemBox = document.querySelector('#item-box-container .item-box:nth-child(' + (index + 1) + ')');
+    let item = webpagedata.items[index];
+    let headingnode = document.createElement('h3');
+    itemBox.appendChild(headingnode);
+    headingnode.innerText = item.title;
+    let tnnode = document.createElement('img');
+    tnnode.setAttribute('src', item.thumbnail);
+    itemBox.appendChild(tnnode);
+    let descnode = document.createElement('p');
+    descnode.innerText = item.description;
+    itemBox.appendChild(descnode);
+    let pricenode = document.createElement('p');
+    pricenode.innerText = '₹ ' + item.price;
+    itemBox.appendChild(pricenode);
+    if (item.discount) {
+        pricenode.style.textDecoration = 'line-through';
+        let discnode = document.createElement('p');
+        discnode.innerText = '₹ ' + (item.price - item.price * item.discount / 100);
+        itemBox.appendChild(discnode);
+    }
+}
 
-// body.innerHTML = `<h1>${webpagedata.title}</h1>`
 
-//create a test div
-// let testdivnode = document.createElement('div');
-// body.insertBefore(testdivnode, footer);
-// let testdiv = document.querySelector('div');
+    // body.innerHTML = `<h1>${webpagedata.title}</h1>`
+
+    //create a test div
+    // let testdivnode = document.createElement('div');
+    // body.insertBefore(testdivnode, footer);
+    // let testdiv = document.querySelector('div');
 
 

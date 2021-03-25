@@ -1,0 +1,13 @@
+#item-box-container {
+  display: flex;
+  justify-content: space-around;
+}
+.item-box {
+  width: 200px;
+  height: auto;
+  text-align: center;
+  background: #fff;
+  border: 1px solid black;
+  border-radius: 5px;
+  margin: 10px;
+}
