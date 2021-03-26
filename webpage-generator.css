@@ -2,7 +2,7 @@
 #remarks {
   display: flex;
   justify-content: space-around;
-  width: 100vw;x
+  width: 100vw;
 }
 .remark {
   background: white;
@@ -28,6 +28,10 @@
 }
 #regForm input {
   display: block;
+  margin: 5px;
+}
+#regForm input[type="checkbox"] {
+  display: inline;
   margin: 5px;
 }
 

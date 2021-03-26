@@ -17,3 +17,7 @@ remarkContainer()
 remarks()
 regForm()
 regFormFields()
+if (webpagedata.regForm.allowSelectItems) {
+    cbContainer();
+    checks();
+}

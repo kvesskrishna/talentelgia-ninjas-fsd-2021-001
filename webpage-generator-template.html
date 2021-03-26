@@ -33,11 +33,13 @@
                 name: 'registrationForm',
                 method: 'POST',
                 action: 'register.php',
+                allowSelectItems: true,
+                selectAllItemsByDefault: false,
+                itemsCheckedByDefault: [5],
                 fields: [
                     { type: 'text', name: 'fname', validators: { required: true, minlength: 4 } },
                     { type: 'text', name: 'lname', validators: { required: true, minlength: 4 } },
                     { type: 'email', name: 'email', validators: { required: true, minlength: 0 } },
-
                     { type: 'password', name: 'pwd', validators: { required: true, minlength: 8 } },
                     { type: 'submit', name: 'submit' },
                 ]

@@ -147,6 +147,36 @@ const regFormFields = () => {
         }
     })
 }
+
+const cbContainer = () => {
+    cbc = document.createElement('div');
+    cbc.setAttribute('id', 'checks');
+    body.insertBefore(cbc, footer);
+}
+
+const checks = () => {
+    webpagedata.items.forEach(item => {
+        let cb = document.createElement('input');
+        cb.setAttribute('type', 'checkbox');
+        cb.setAttribute('id', 'cb' + item.id);
+        cb.setAttribute('value', item.id);
+        if (webpagedata.regForm.selectAllItemsByDefault) {
+            cb.setAttribute('checked', 'true');
+
+        }
+        if (webpagedata.regForm.itemsCheckedByDefault.includes(item.id)) {
+            cb.setAttribute('checked', 'true');
+
+        }
+        let cblabel = document.createElement('label');
+        cblabel.setAttribute('for', 'cb' + item.id);
+        cblabel.setAttribute('id', 'cbl' + item.id);
+        cblabel.textContent = item.title;
+        rf.insertBefore(cblabel, document.querySelector('#regForm input[type="submit"]'));
+        rf.insertBefore(cb, document.getElementById('cbl' + item.id))
+    })
+
+}
     // body.innerHTML = `<h1>${webpagedata.title}</h1>`
 
     //create a test div
