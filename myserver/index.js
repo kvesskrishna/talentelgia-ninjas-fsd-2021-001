@@ -78,10 +78,18 @@ app.get('/', (req, res) => {
 app.get('/gethtmlresult/:file', (req, res) => {
     const filename = req.params.file + '.html';
     res.sendFile(path.join(__dirname + '/' + filename));
-    // res.send
-    // res.sendFile(path.join('./../syncjs.html'))
 })
 
+app.get('/jsfile/:file', (req, res) => {
+    const filename = req.params.file + '.js';
+    res.sendFile(path.join(__dirname + '/' + filename));
+})
+
+
+app.get('/getimage', (req, res) => {
+    const filename = 'assets/test.jpeg';
+    res.sendFile(path.join(__dirname + '/' + filename));
+})
 app.get('/products', (req, res) => {
     res.json(data.products)
 })

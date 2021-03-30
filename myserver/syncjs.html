@@ -9,26 +9,28 @@
 </head>
 
 <body>
-    <button onclick="runfun()"> click me</button>
+    <!-- <button onclick="getDate()"> click me</button> -->
+    <script src='http://localhost:3000/jsfile/asyncawait'></script>
+    <script src='http://localhost:3000/jsfile/promises'></script>
     <script>
         // sync
-        let btn = document.querySelector('button'); // excuted first
-        const runfun = () => {
-            console.log('button clicked..');
-            const worker = new Worker('./worker.js');
-            worker.postMessage('call to workder');
-            // some time lag
+        // let btn = document.querySelector('button'); // excuted first
+        // const runfun = () => {
+        //     console.log('button clicked..');
+        //     const worker = new Worker('./worker.js');
+        //     worker.postMessage('call to workder');
+        //     // some time lag
 
 
-            let pnode = document.createElement('p');
-            pnode.textContent = 'This is the paragraph';
-            document.body.appendChild(pnode); // executed third
+        //     let pnode = document.createElement('p');
+        //     pnode.textContent = 'This is the paragraph';
+        //     document.body.appendChild(pnode); // executed third
 
-            worker.onmessage = (m) => console.log(m.data)
-        }
-        // asyc
-        fetch('http://localhost:3000/products').then(data => data.json()).then(data => console.log(data)).catch(error => console.log('ther is an error..', error));
-        console.log('this is last console.log in order')
+        //     worker.onmessage = (m) => console.log(m.data)
+        // }
+        // // asyc
+        // fetch('http://localhost:3000/products').then(data => data.json()).then(data => console.log(data)).catch(error => console.log('ther is an error..', error));
+        // console.log('this is last console.log in order')
         // console.log(mydata)
     </script>
 </body>

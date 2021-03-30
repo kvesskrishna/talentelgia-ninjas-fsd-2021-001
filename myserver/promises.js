@@ -1,36 +1,74 @@
-const delayedfun = () => {
+//async -> waitng for a task to get completed
+// callback, promise
 
+// user story
+
+// calculate the date 10000000 times and return to print it.
+
+// callback that loops and prints date and
+const looper = () => {
+
+    let date;
     for (let i = 0; i < 10000000; i++) {
-        return new Date();
+        date = new Date();
     }
+    return date;
+    // return false;
+}
+const printData = (msg) => {
+    console.log(msg) // this waits for previous code to complete - sync
 }
 
-const printDate = (date) => {
-    console.log(date)
-}
+// promises
 
-const showError = (error) => {
-    console.log(error)
-}
 
-const printMsg = (msg) => {
-    console.log(msg)
-}
+// user story -
+// Krisha promises to inform management about his presence the next day by 9am -> promise
+// =
+// = Mangaement continues other operations ( when the promise is pending...)
+// =
+// possiblities of promise at 9 am -> 1. Krishna may attend (Resolve), 2. Krishna may not attend (Reject)
+// Management action -> 1. Resolves -> inform and share session link to students - then(), 2. Rejected -> engange another trainer, create link and share to students - catch()
 
-let mypromise = new Promise((resolve, reject) => {
-    if (delayedfun()) {
-        resolve(delayedfun());
+
+// A, B, C, D on Thursday => A promised party to B coming saturday.If A gives party, B will party with A.Else B will party with C.Meanwhile i.e on Friday B continues party with D.
+
+
+let decision = (day, msg) => {
+    console.log(day, msg)
+}
+// ON THURSDAY
+decision('THU', 'take promise from A')
+
+let A = new Promise((resolve, reject) => {
+    let givingParty = false;
+    if (givingParty == true) {
+        resolve();
     } else {
-        reject('cannot run delayedfun..')
+        reject();
     }
-});
+})
 
-// mypromise.then(printDate).catch(showError);
-// printMsg('coming after promise call..')
 
-async function asyncawait() {
-    await mypromise;
-    printMsg('called directly after await');
-}
+//ON SATURDAY
 
-asyncawait()
+A.then(() => decision('Sat', 'Party with A')).catch(() => decision('Sat', 'Party with C'));
+
+// ON FRIDAY
+
+decision('FRI', 'Party with D')
+
+
+
+// let loopdate = new Promise((resolve, reject) => {
+//     if (looper()) {
+//         resolve(looper());
+//     } else {
+//         reject('promise is rejected');
+//     }
+// });
+
+// // after promise is completed
+// loopdate.then(data => printData(data)).catch(error => printData(error))
+
+// printData('This is written after promise call...')

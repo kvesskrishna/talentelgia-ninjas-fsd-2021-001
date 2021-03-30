@@ -22,8 +22,8 @@
             document.querySelector('h2').textContent = `${display[0]} ${display[1]} ${display[2]} ${display[3]} ${display[4]}:${ms}`;
         }
 
-        setInterval(printCalendar, 1);
-
+        setInterval(printCalendar, 1000);//callback
+        console.log('timer runs')
     </script>
 </body>
 
