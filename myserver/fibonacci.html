@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- start making habit of below
+    start using let, const, arrow functions
+    functional programming -->
+    <div>
+
+    </div>
+    <script>
+
+        let colors = [];
+        const getFibonacci = (a = 0, b = 1) => {
+            let result = a + b;
+            let ele = document.createElement('span');
+            ele.textContent = result;
+            ele.style.fontSize = result + 'em';
+            ele.style.padding = '10px'
+            colorGenerator();
+            ele.style.color = colors[colors.length - 1];
+            document.querySelector('div').appendChild(ele)
+            return [a, b, result];
+        }
+        const colorGenerator = () => {
+            let colorcode = '#' + Math.floor(100000 + Math.random() * 900000);
+            if (!colors.includes(colorcode)) {
+                colors.push(colorcode);
+            } else { colorGenerator() }
+        }
+        let result = getFibonacci(); // 2
+        const mynum = prompt('Enter range of fibonacci..');
+        for (let i = 1; i < mynum; i++) {
+            result = getFibonacci(result[1], result[2]);
+        }
+
+    </script>
+
+</body>
+
+</html>

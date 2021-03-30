@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button onclick="runfun()"> click me</button>
+    <script>
+        // sync
+        let btn = document.querySelector('button'); // excuted first
+        const runfun = () => {
+            console.log('button clicked..');
+            const worker = new Worker('./worker.js');
+            worker.postMessage('call to workder');
+            // some time lag
+
+
+            let pnode = document.createElement('p');
+            pnode.textContent = 'This is the paragraph';
+            document.body.appendChild(pnode); // executed third
+
+            worker.onmessage = (m) => console.log(m.data)
+        }
+        // asyc
+        fetch('http://localhost:3000/products').then(data => data.json()).then(data => console.log(data)).catch(error => console.log('ther is an error..', error));
+        console.log('this is last console.log in order')
+        // console.log(mydata)
+    </script>
+</body>
+
+</html>

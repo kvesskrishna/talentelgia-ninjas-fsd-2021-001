@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2></h2>
+    <script>
+        const printCalendar = () => {
+
+            let display = '';
+            let value = new Date();
+            let ms = value.getMilliseconds();
+            value = value.toString();
+            display = value.split(' ');
+            console.log(display)
+            document.querySelector('h2').textContent = `${display[0]} ${display[1]} ${display[2]} ${display[3]} ${display[4]}:${ms}`;
+        }
+
+        setInterval(printCalendar, 1);
+
+    </script>
+</body>
+
+</html>
