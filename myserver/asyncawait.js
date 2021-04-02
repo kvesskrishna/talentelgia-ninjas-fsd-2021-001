@@ -14,3 +14,4 @@ async function isEven(n) {
 // console.log(isEven(4))
 isEven(4).then(data => console.log(data)).catch(e => console.log(e))
 console.log('the last line')
+console.log(3 > 2 > 1)

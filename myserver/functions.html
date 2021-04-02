@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function sayhello() {
+            a = [1, 2, 3, 4]
+            console.log(a[9], a.indexOf(9))
+            // index of unknown value is -1
+            // value of unknown index is undefined
+
+            if (!!a[2]) {
+                console.log('do something..')
+            }
+            console.log('before return..')
+            // return;
+            for (var i = 0; i < 9; i++) {
+                if (i == 5) {
+                    return i;
+                    // break;
+                }
+                console.log(i)
+            }
+            // exit(0);
+            return 'after forloop..'
+
+        }
+        let output = sayhello()
+        console.log(output)
+    </script>
+</body>
+
+</html>

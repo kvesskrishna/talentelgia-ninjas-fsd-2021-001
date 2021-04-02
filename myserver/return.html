@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // functions are definitions, manuals. they have to be called
+        function a() {
+            console.log('a');
+            a = '' // memory assigned - person gave an address which is vacant
+            b = null // memory not assigned - person gave a fake not/has no address
+            c = undefined // you should never do this - no person, no address
+            var e; // only js will do this
+            console.log(a, b, c, e) //  null undefined undefined
+            return;
+        }
+        function b() {
+            console.log('b')
+        }
+        function c() {
+            console.log('c')
+        }
+        d = a();
+        console.log(d) //a. null, b. undefined, c. prototype of a, d.none of the above
+        f = [1, 2, 3, 4]
+        console.log(f.includes(5));
+        let index = f.indexOf(34);
+        console.log(index)
+        if (f.indexOf(1) >= 0) {
+            console.log('value exists')
+        } else { console.log('value not exists') }
+        // if always takes true or false (boolean) a condtion
+        // purre booleans - true false not 'true' 'false' as they are strings
+        // boolean = true, false, 1, 0, which is not empty or empty
+        // true -> true, 'true', 'false' ,1, which is not empty
+        // false -> false, 0, empty values
+        //         booleans - true, false
+        //         numbers - 1,2
+        //         strings - '1' , '2' parseInt(), 'true', 'false' parseBoolean()
+        // nums = [1,2,23] // arrays\
+        // nums = '[1,2,3]' // string -> JSON.parse
+        man = 'false'; // booolean - true
+        console.log(parseBoolean(man), man)
+        human = -1; // false
+        sapien = 1 // true
+        name = 'john';
+        myname = null;
+        yourname = '';
+
+        if (man) {
+            think = true
+        } else {
+            think = false
+        }
+        console.log(think)
+    </script>
+</body>
+
+</html>

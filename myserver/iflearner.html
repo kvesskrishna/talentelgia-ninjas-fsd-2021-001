@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        pre,
+        p {
+            background-color: yellow;
+            border: 1px solid red;
+            padding: 20px;
+            width: 700px
+        }
+
+        p {
+            background-color: green;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <pre>
+
+        </pre>
+    </div>
+    <div>
+        <p>
+
+        </p>
+    </div>
+    <div>
+        Type your condition: <input onkeyup='iflearner()' id="condition" type="text">
+    </div>
+    <script>
+        condition = true;
+        const iflearner = () => {
+            condition = document.getElementById('condition').value;
+
+            code = `let a = [1, 2, 3, 4];
+            if (${condition}) {
+                document.querySelector('p').style.backgroundColor = 'green';
+                document.querySelector('p').textContent = 'Inside IF..';
+            }  else {
+                document.querySelector('p').style.backgroundColor = 'orange';
+                document.querySelector('p').textContent = 'Inside ELSE..';
+            }`;
+            document.querySelector('pre').textContent = code;
+            try {
+
+                eval(code)
+            } catch (e) {
+                document.querySelector('p').style.backgroundColor = 'red';
+
+                document.querySelector('p').textContent = 'Invalid Condition..' + e;
+
+            }
+            // if (eval(condition)) {
+            //     document.querySelector('p').textContent = 'Inside IF..';
+            // } else {
+            //     document.querySelector('p').textContent = 'Inside ELSE..';
+            // }
+        }
+        iflearner();
+
+    </script>
+</body>
+
+</html>

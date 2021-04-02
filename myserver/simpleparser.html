@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        // let val = prompt('Enter value');
+        // valtype = typeof parseInt(val);
+        // console.log(valtype)
+        value = '++-5';
+        // let x = 'abc';
+        // let y = 5;
+        // console.log('x');//x
+        // console.log(parseInt(x)); // 7 nan
+        // console.log(eval('x')); // 7 abc
+        // console.log(eval('x+y'));//12
+        console.log(value);
+        length = value.length;
+        // console.log(length);
+        valarray = value.split('');
+        // console.log(valarray);
+        for (i = 0; i < length; i++) {
+            if (valarray[i] == valarray[i + 1]) {
+                valarray.splice(i + 1, 0, '(');
+                valarray.push(')');
+                // console.log(valarray)
+            }
+        }
+        let cleanvalue = valarray.join('')
+        console.log('clean value', cleanvalue)
+        console.log('evalueated value', eval(cleanvalue)); //(-++(+-5))
+        console.log('parsed value', parseInt(cleanvalue)); //(-++(+-5))
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // reserved word - the js already has a definitin with it.
+        const value = -true
+        i = 5;
+
+        m = (2 + 4) / 4; //3 1.5
+        // i = 'tom';
+        let k = i++; // assign to i and then increment
+        let j = ++i; // increment i and then assign to i
+        console.log(i, j, k); //5 6
+        console.log(i, j, k); //5 6
+        console.log(++i, i++, i++, +(+4), -+(+(+4)),  //6,6,6/7
+            console.log(i); //6/7
+
+        // l: number = 4;
+        // l = 'state'; // throw eeror in typescript
+
+
+        // + x + = +
+        // + x - = -
+        // - x + = -
+        // - x - = +
+        // let console = {
+        //     log: (...values) => {document.write('log inside custom console obj'); }
+        // }
+        console.log(value, +value, -value) //  false 0 0
+    </script>
+</body>
+
+</html>
