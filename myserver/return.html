@@ -42,11 +42,12 @@
         // false -> false, 0, empty values
         //         booleans - true, false
         //         numbers - 1,2
-        //         strings - '1' , '2' parseInt(), 'true', 'false' parseBoolean()
+        //         strings - '1' , '2' parseInt(), 'true', 'false'
         // nums = [1,2,23] // arrays\
         // nums = '[1,2,3]' // string -> JSON.parse
-        man = 'false'; // booolean - true
+        man = -+true; // booolean - true
         console.log(parseBoolean(man), man)
+        
         human = -1; // false
         sapien = 1 // true
         name = 'john';

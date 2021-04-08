@@ -10,18 +10,43 @@
 
 <body>
     <h2></h2>
+    <div>
+        <label for="break">Break</label><input id="break" type="time" onchange="setTime('break')">
+        <br><label for="lunch">Lunch</label><input type="time" id="lunch" onchange="setTime('lunch')">
+        <br><label for="dinner">Dinner</label><input type="time" id="dinner" onchange="setTime('dinner')">
+    </div>
     <script>
         const printCalendar = () => {
-
             let display = '';
             let value = new Date();
             let ms = value.getMilliseconds();
             value = value.toString();
             display = value.split(' ');
-            console.log(display)
             document.querySelector('h2').textContent = `${display[0]} ${display[1]} ${display[2]} ${display[3]} ${display[4]}:${ms}`;
         }
 
+        const setTime = (type) => {
+            let now = new Date();
+            console.log(now)
+            nowinms = Date.parse(now);
+            console.log(nowinms)
+
+            const time = document.querySelector('#' + type).value;
+            console.log(time)
+            xtime = `${now.getFullYear()}/${now.getMonth() + 1}/${now.getDate()} ${time}:00`;
+            xtime = new Date(xtime)
+            xtime = Date.parse(xtime)
+            console.log(xtime - nowinms)
+            fireAlarm(type, xtime - nowinms)
+        }
+        const fireAlarm = (type, time) => {
+
+            setTimeout(() => showAlarm(type), time)
+        }
+
+        const showAlarm = (breaktype) => {
+            console.log('It is time for ' + breaktype)
+        }
         setInterval(printCalendar, 1000);//callback
         console.log('timer runs')
     </script>
