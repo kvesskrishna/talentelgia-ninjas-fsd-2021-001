@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h2 {
+            text-align: center;
+            padding: 5px;
+            background-color: blue;
+            color: white;
+        }
+
+        .main {
+            padding: 5px;
+            border: 1px solid grey;
+            margin-top: 10px;
+            border-radius: 5px;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <h2 style="float: left;">Online Test</h2>
+        <h2 style="float: right">Timer: <span id="mins">00</span>:<span id="secs">00</span></h2>
+        <div class="main">
+            <h3>Questions</h3>
+            <ol id="questions">
+                <li>
+                    <p>question1</p>
+                    <ol type="a">
+                        <li><input type="radio" value="a" name="q1options">option 1</li>
+                        <li><input type="radio" value="b" name="q1options">option 2</li>
+                        <li><input type="radio" value="c" name="q1options">option 3</li>
+                    </ol>
+                </li>
+            </ol>
+            <div>
+                <button id="submit">Submit</button>
+            </div>
+        </div>
+    </div>
+    <script>
+        // prepare data either from a web api req, or create some static data.
+        const time = '0.2' // in minutes
+        const questions = [
+            { id: 1, title: 'What is the full form of HTML', answer: 1, options: [{ id: 1, title: 'Hyper text markup language' }, { id: 2, title: 'Hypertext making language' }, { id: 3, title: 'Herotext markup language' }] }, { id: 2, title: 'What is the full form of CSS', answer: 2, options: [{ id: 1, title: 'Centered style sheet' }, { id: 2, title: 'Cascading style sheet' }, { id: 3, title: 'Herotext markup language' }] },
+            { id: 3, title: 'Which is not a keyword in js', answer: 2, options: [{ id: 1, title: 'let' }, { id: 2, title: 'be' }, { id: 3, title: 'var' }, { id: 4, title: 'function' }] },
+        ]
+        questionsContainer = document.getElementById('questions');
+        let items = '';
+        score = 0;
+        userAnswers = [];
+        questions.forEach(question => {
+            userAnswers.push({ qno: question.id, userAnswer: null });
+            let options = ''
+            question.options.forEach(option => {
+                options += `  <li><input class="radio" type="radio" value="${option.id}" name="${question.id}">${option.title}</li>`
+            })
+            items += ` <li>
+                    <p>${question.title}</p>
+                    <ol id="q${question.id}" type="a">
+                        ${options}
+                    </ol>
+                </li>`;
+        })
+        questionsContainer.innerHTML = items;
+        console.log(userAnswers)
+
+        const captureAnswer = (qno, option) => {
+            userAnswers.forEach(answer => {
+                if (answer.qno == qno) {
+                    answer.userAnswer = option
+                }
+            })
+            console.log(userAnswers)
+
+        }
+        // document.querySelector('input').addEventListener('change', (event) => { console.log('radio clicked..') })
+        // captureAnswer(1, 'a');
+        let radios = document.getElementsByClassName('radio');
+        console.log(radios)
+        for (let i = 0; i < radios.length; i++) {
+            radios[i].addEventListener('change', (event) => {
+                console.log('radio clicked', event.target.name, event.target.value);
+                captureAnswer(event.target.name, event.target.value)
+            })
+        }
+
+        const calcResult = () => {
+            userAnswers.forEach(answer => {
+                let key = questions.filter(q => q.id == answer.qno)
+                if (key[0].answer == answer.userAnswer) {
+                    score++;
+                }
+            })
+
+            document.write('<h1>Your Score is: ' + score)
+        }
+
+        document.getElementById('submit').addEventListener('click', (event) => {
+            calcResult()
+
+
+        })
+
+        setTimeout(() => {
+            calcResult(); //
+        }, time * 60 * 1000)
+
+        setInterval(() => {
+            time = time * 60;
+            document.getElementById('mins').innerHTML = time
+        }, 1000)
+
+    </script>
+</body>
+
+</html>
