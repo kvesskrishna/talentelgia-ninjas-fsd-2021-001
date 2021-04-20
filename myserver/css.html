@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #firstdiv>div>div>div {
+            color: red;
+        }
+
+        #firstdiv div:nth-child(1) p {
+            color: green;
+        }
+    </style>
+</head>
+
+<body>
+    <p>para 0</p>
+    <div id="firstdiv">
+        <p>para 1</p>
+        <div>
+            <div>
+                <p>para 2</p>
+                <div>
+                    <p>para 3</p>
+                </div>
+            </div>
+            <p>para 4</p>
+            <p>para 5</p>
+        </div>
+        <p>para 6</p>
+    </div>
+</body>
+
+</html>
