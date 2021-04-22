@@ -62,11 +62,9 @@
             // alert(name)
             let index = todos.findIndex(task => task.name == name);
             if (status == 'inprogress' && reqstatus == 'complete') {
-
                 todos[index].status = 'completed';
             }
             if (status == 'new' && reqstatus == 'progress') {
-
                 todos[index].status = 'inprogress';
             }
             displayTasks();
