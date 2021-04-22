@@ -16,59 +16,68 @@
     </div>
     <div>
         <input id="newtask" type="text" placeholder="Add new task">
-        <button onclick="addTask()">Add</button>
+        <button onclick="todo.addTask()">Add</button>
     </div>
     <ul id="tasklist">
 
     </ul>
     <script>
-        let newtasks = 0;
-        let completed = 0;
-        let inProgress = 0;
-        let todos = [
-            { name: 'wake up', status: 'completed' },
-            { name: 'take bathe', status: 'inprogress' },
-            { name: 'have breakfast', status: 'new' },
-            { name: 'start the car', status: 'new' }
-        ];
+        // let newtasks = 0;
+        // let completed = 0;
+        // let inProgress = 0;
+        // let todos = [
+            // { name: 'wake up', status: 'completed' },
+            // { name: 'take bathe', status: 'inprogress' },
+            // { name: 'have breakfast', status: 'new' },
+            // { name: 'start the car', status: 'new' }
+        // ];
 
-        displayTasks = () => { // view refresher
-            newtasks = todos.filter(task => task.status == 'new').length;
-            document.querySelector('#currentStatus span:first-child').innerHTML = newtasks;
+        // displayTasks = () => { // view refresher
+        //     newtasks = todos.filter(task => task.status == 'new').length;
+        //     document.querySelector('#currentStatus span:first-child').innerHTML = newtasks;
 
-            inProgress = todos.filter(task => task.status == 'inprogress').length;
-            document.querySelector('#currentStatus span:last-child').innerHTML = inProgress;
+        //     inProgress = todos.filter(task => task.status == 'inprogress').length;
+        //     document.querySelector('#currentStatus span:last-child').innerHTML = inProgress;
 
-            completed = todos.filter(task => task.status == 'completed').length;
-            document.querySelector('#currentStatus span:nth-child(2)').innerHTML = completed;
+        //     completed = todos.filter(task => task.status == 'completed').length;
+        //     document.querySelector('#currentStatus span:nth-child(2)').innerHTML = completed;
 
-            tasksHtml = '';
-            todos.forEach(task => {
-                tasksHtml += `<li>${task.name} => ${task.status}
-                    <button onclick="buttonEvent('${task.status}', '${task.name}', 'progress')">In progress</button>
-                    <button onclick="buttonEvent('${task.status}','${task.name}', 'complete')">Complete</button>
-                    </li>`;
-            });
-            document.getElementById('tasklist').innerHTML = tasksHtml;
-        }
-        displayTasks();
-        addTask = () => {
-            let task = document.getElementById('newtask').value;
-            let taskobj = { name: task, status: 'new' };
-            todos.push(taskobj);
-            displayTasks();
-        }
-        buttonEvent = (status, name, reqstatus) => {
-            // alert(name)
-            let index = todos.findIndex(task => task.name == name);
-            if (status == 'inprogress' && reqstatus == 'complete') {
-                todos[index].status = 'completed';
-            }
-            if (status == 'new' && reqstatus == 'progress') {
-                todos[index].status = 'inprogress';
-            }
-            displayTasks();
-        }
+        //     tasksHtml = '';
+        //     todos.forEach(task => {
+        //         tasksHtml += `<li>${task.name} => ${task.status}
+        //             <button onclick="buttonEvent('${task.status}', '${task.name}', 'progress')">In progress</button>
+        //             <button onclick="buttonEvent('${task.status}','${task.name}', 'complete')">Complete</button>
+        //             </li>`;
+        //     });
+        //     document.getElementById('tasklist').innerHTML = tasksHtml;
+        // }
+        // displayTasks();
+        // addTask = () => {
+        //     let task = document.getElementById('newtask').value;
+        //     let taskobj = { name: task, status: 'new' };
+        //     todos.push(taskobj);
+        //     displayTasks();
+        // }
+        // buttonEvent = (status, name, reqstatus) => {
+        //     // alert(name)
+        //     let index = todos.findIndex(task => task.name == name);
+        //     if (status == 'inprogress' && reqstatus == 'complete') {
+        //         todos[index].status = 'completed';
+        //     }
+        //     if (status == 'new' && reqstatus == 'progress') {
+        //         todos[index].status = 'inprogress';
+        //     }
+        //     displayTasks();
+        // }
+    </script>
+    <script src="http://localhost:3000/jsfile/todo"></script>
+    <script>
+        list = [{ name: 'wake up', status: 'completed' },
+        { name: 'take bathe', status: 'inprogress' },
+        { name: 'have breakfast', status: 'new' },
+        { name: 'start the car', status: 'new' }];
+        todo = new Todo(list);
+        todo.displayTasks();
     </script>
 </body>
 
