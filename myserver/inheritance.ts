@@ -24,7 +24,7 @@ class Employee extends Person {
       super.getFullName() +
       " is having " +
       this.legs +
-      " and " +
+      " legs and " +
       this.hands +
       " hands";
     return detail;

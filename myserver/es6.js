@@ -6,12 +6,13 @@
 
 function mydemo() {
     var x = 5;
+    var status = false;
     if (x > 0) {
         let status = true;
         console.log(x + ' is ' + status) // 5 is true
     }
     console.log(x) // 5
-    console.log(status) // undefined
+    console.log(status) // not defined
 }
 
 mydemo();
