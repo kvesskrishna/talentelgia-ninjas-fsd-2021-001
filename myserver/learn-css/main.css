@@ -1,0 +1,105 @@
+@import url("https://fonts.googleapis.com/css2?family=Freckle+Face&display=swap");
+
+.mydiv {
+  font-size: 30pt;
+  font-weight: bold;
+  line-height: 225%;
+  font-style: italic;
+  color: #8b8f13 !important;
+  font-family: "Freckle Face", cursive;
+  box-shadow: 10px 10px 10px black;
+  text-shadow: 5px 5px 5px white;
+}
+
+#yourdiv {
+  font-size: 45px;
+  background-color: rgba(24, 84, 45, 0.8);
+  color: white;
+}
+
+#yourdiv > span {
+  color: orange;
+}
+.asia > ul {
+  background-color: yellow;
+}
+
+.africa > ul {
+  background-color: green;
+}
+
+.america > ul {
+  background-color: blue;
+}
+
+.asia ul .india {
+  background-color: pink;
+}
+.asia ul .malaysia {
+  background-color: rgb(44, 43, 43);
+}
+
+.bgdemo {
+  font-size: 45px;
+  color: white;
+  height: 1800px;
+  width: 100%;
+  /* background-color: orange;
+  background-image: url("https://blog.prezi.com/wp-content/uploads/2019/03/patrick-tomasso-208114-unsplash-1024x768.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed; */
+  background: url("https://blog.prezi.com/wp-content/uploads/2019/03/patrick-tomasso-208114-unsplash-1024x768.jpg")
+    no-repeat center fixed;
+}
+
+.myimg {
+  height: 100px;
+  width: 100px;
+  border: 10px ridge red;
+  border-radius: 50%;
+  box-shadow: 10px 10px 10px black;
+}
+
+.myimg:hover {
+  height: 200px;
+  width: 200px;
+}
+
+a:link {
+  color: green;
+}
+a:hover {
+  color: red;
+}
+a:visited {
+  color: orange;
+}
+a:active {
+  color: white;
+}
+
+table {
+  border: 1px solid #333;
+
+  font-size: 40px;
+}
+table tr td,
+th {
+  border: 1px solid #333;
+}
+table tr th {
+  background-color: green;
+  color: white;
+}
+table tr td {
+  background-color: pink;
+}
+table tbody tr:nth-child(2n + 1) td {
+  background-color: blue;
+  color: white;
+}
+table tbody tr:nth-child(2n) td {
+  background-color: magenta;
+  color: white;
+}

@@ -10,12 +10,12 @@ var Shape = /** @class */ (function () {
         if (this.type == "rectangle") {
             return this.length * this.breadth;
         }
-        else if ((this.type = "square")) {
+        else if (this.type == "square") {
             return this.length * this.length;
         }
         else if (this.type == "circle") {
-            var pi = Math.PI;
-            return pi * (this.length * this.length);
+            console.log("in circle");
+            return (Math.PI * this.length * this.length).toFixed(2);
         }
         else {
             return null;
@@ -25,12 +25,11 @@ var Shape = /** @class */ (function () {
         if (this.type == "rectangle") {
             return 2 * (this.length + this.breadth);
         }
-        else if ((this.type = "square")) {
+        else if (this.type == "square") {
             return 4 * this.length;
         }
         else if (this.type == "circle") {
-            var pi = Math.PI;
-            return 2 * (pi * this.length);
+            return (2 * Math.PI * this.length).toFixed(2);
         }
         else {
             return null;

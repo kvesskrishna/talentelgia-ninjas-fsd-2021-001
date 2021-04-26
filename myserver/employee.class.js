@@ -1,21 +1,36 @@
 "use strict";
 exports.__esModule = true;
 var Employee = /** @class */ (function () {
-    function Employee(empid, empname, basic, travel, medical) {
+    function Employee(empid, empname, basic, travel, medical, location) {
         this.empId = empid;
         this.empName = empname;
         this.basic = basic;
         this.travel = travel;
         this.medical = medical;
+        this.location = location;
         // this is the first method automatically called when the class is instantiated
         console.log("constructor called..");
+        // return { empid: this.empid, empName: this.empName, basic: this.basic, travel: this.travel, medical: this.medical, location: this.location };
     }
     Employee.prototype.getSalary = function () {
         return this.basic + this.travel + this.medical;
     };
     return Employee;
 }());
-var emp1 = new Employee("a123", "Tom", 1000, 200, 300); // class instantiation
+var emp1 = new Employee("a123", "Tom", 1000, 200, 300, "Gurgaon"); // class instantiation
+console.log(emp1);
 var sal1 = emp1.getSalary();
 // emp.constructor();
 console.log("Salary of " + emp1.empName + " whose employee id is " + emp1.empId + " is " + emp1.getSalary());
+var employees = [
+    new Employee("a123", "Tom", 5000, 200, 300, "Gurgaon"),
+    new Employee("a124", "miKE", 3000, 200, 500, "Delhi"),
+    new Employee("a125", "Jack", 322, 3232, 432, "Gurgaon"),
+    new Employee("a126", "John", 434, 33, 323, "Chandigarh"),
+];
+console.log(employees);
+employees.forEach(function (employee) {
+    console.log(employee.empName + " is from " + employee.location);
+});
+var filtered = employees.filter(function (emp) { return emp.location != "Delhi"; });
+console.log("Filetered Result: ", filtered);
