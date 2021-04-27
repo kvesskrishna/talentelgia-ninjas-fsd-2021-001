@@ -1,0 +1,25 @@
+.one {
+  background: red;
+  height: 100px;
+  width: 100px;
+  /* display: inline; */
+  position: static;
+}
+.two {
+  background: blue;
+  height: 100px;
+  width: 100px;
+  /* display: inline; */
+  position: absolute;
+  top: -10px;
+  right: 0px;
+  bottom: 0px;
+  left: 10px;
+}
+.jar {
+  width: 400px;
+}
+
+.sweets {
+  width: 300px;
+}
