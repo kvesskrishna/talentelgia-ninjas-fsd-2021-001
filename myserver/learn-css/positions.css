@@ -1,25 +1,67 @@
-.one {
+.red {
   background: red;
   height: 100px;
   width: 100px;
   /* display: inline; */
   position: static;
+  left: 50px;
 }
-.two {
+.grey {
+  background: grey;
+  height: 500px;
+  width: 500px;
+}
+.orange {
+  background: orange;
+  height: 80px;
+  width: 80px;
+  /* display: inline; */
+  position: static;
+}
+.blue {
   background: blue;
   height: 100px;
   width: 100px;
   /* display: inline; */
   position: absolute;
-  top: -10px;
+  top: 50px;
   right: 0px;
   bottom: 0px;
-  left: 10px;
+  left: 0px;
 }
 .jar {
-  width: 400px;
+  position: absolute;
+  left: 30px;
+  top: 200px;
 }
 
-.sweets {
+.jar img {
+  width: 400px;
+}
+.sweets img {
   width: 300px;
+}
+.sweets {
+  position: relative;
+  top: -250px;
+  left: 50px;
+  bottom: 0px;
+}
+
+.one,
+.two,
+.three {
+  padding: 20px;
+  width: 100px;
+}
+.one {
+  background: red;
+}
+.two {
+  background: green;
+  position: relative;
+  left: 50px;
+}
+.three {
+  background: blue;
 }
