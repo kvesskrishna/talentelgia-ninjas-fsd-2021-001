@@ -1,0 +1,33 @@
+* {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+.main {
+  background: #ccc;
+  height: auto;
+  width: 500px;
+  text-align: center;
+  border: 1px groove black;
+  border-radius: 10px;
+}
+.actual,
+.result,
+.userinput,
+.score {
+  background: navy;
+  color: white;
+  font-size: 82px;
+  margin: 5px;
+  border: 2px ridge #eee;
+}
+.result {
+  background: none;
+  font-size: 40px;
+  color: black;
+}
+.userinput {
+  background: orange;
+}
+.score {
+  font-size: 32px;
+  background: red;
+}

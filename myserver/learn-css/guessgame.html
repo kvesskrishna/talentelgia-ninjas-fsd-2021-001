@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="guessgame.css">
+</head>
+
+<body>
+    <div class="main">
+        <h2>The Guess Game</h2>
+        <div class="actual">?</div>
+        <div class="score">Your Score: <span></span></div>
+        <div class="result"></div>
+        <div class="userinput">
+            <input maxlength="1" type="text" placeholder="Your Guess">
+            <br>
+            <button onclick="validate()">Submit</button>
+            <button onclick='refresh("?")'>Reset</button>
+        </div>
+    </div>
+    <script src="guessgame.js"></script>
+</body>
+
+</html>

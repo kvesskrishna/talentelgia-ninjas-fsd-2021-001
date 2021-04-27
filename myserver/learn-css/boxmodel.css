@@ -1,0 +1,37 @@
+#parent {
+  color: #000;
+  background-color: red;
+  height: auto;
+  width: auto;
+  /* max-height: 400px; */
+  /* padding: 40px; */
+  margin: 40px 20px;
+  border: 5px solid black;
+  border-left: 10px dotted blue;
+}
+span {
+  background-color: yellow;
+  color: white;
+  /* display: none; */
+  visibility: hidden;
+}
+#para {
+  height: inherit;
+  width: inherit;
+  overflow-y: scroll;
+}
+#child {
+  color: #fff;
+  background-color: green;
+  height: 200px;
+  width: 200px;
+  margin: 40px;
+  /* outline-width: thick;
+  outline-style: dashed;
+  outline-color: pink; */
+  border: thick double white;
+}
+
+#child:hover {
+  background-color: yellow;
+}
