@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            height: 200px;
+            background: black;
+            width: 200px;
+            border: 1px solid white;
+            position: absolute
+        }
+
+        #one {
+            left: 20px;
+            z-index: 10;
+            background: green;
+            opacity: 1;
+
+        }
+
+        #two {
+            left: 40px;
+            z-index: 0;
+            background: red;
+
+        }
+
+        #three {
+            left: 60px;
+            z-index: 60;
+            background: blue;
+
+        }
+
+        input {
+            border: 1px solid red
+        }
+
+        a:focus {
+            border: 1px solid magenta;
+        }
+
+        #four {
+            background: none;
+            position: absolute;
+            top: 300px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="one">
+
+    </div>
+    <div id="two"></div>
+    <div id="three"></div>
+    <div id="four">
+        <a href="#">go to google</a>
+        <input type="text">
+        <button id="plus">+</button>
+        <button id='minus'>-</button>
+    </div>
+    <script>
+        var plus = document.querySelector('#plus');
+        var minus = document.querySelector('#minus');
+        document.querySelector('#one').style.opacity = 1;
+        plus.addEventListener('click', function () {
+            opacity = document.querySelector('#one').style.opacity;
+            console.log(opacity);
+            document.querySelector('#one').style.opacity = parseInt(opacity) + 0.1;
+        })
+        minus.addEventListener('click', function () {
+            opacity = document.querySelector('#one').style.opacity;
+            document.querySelector('#one').style.opacity = opacity - 0.1;
+        })
+    </script>
+</body>
+
+</html>

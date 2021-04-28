@@ -28,6 +28,16 @@
     <div class="one">1</div>
     <div class="two">2</div>
     <div class="three">3</div>
+    <div id='scroller'>
+        Scroll
+        <br>to
+        <br>top
+    </div>
+    <p style='width:3px'>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ullam rerum rem ad repudiandae omnis,
+        obcaecati non excepturi tempore quod. Consectetur cupiditate quia odit fuga sunt explicabo pariatur quaerat
+        nostrum magni!Lorem Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur aperiam excepturi a
+        cupiditate quaerat nesciunt cumque ipsa magni distinctio! A odio vel quibusdam ullam dolorem quis aspernatur, ad
+        aperiam sint. </p>
     <script type="text/javascript">
         var x = 12
         function something() {
@@ -41,7 +51,9 @@
         // if (x) {
         //     console.log("hi");
         //     return true;
+
         // }
+        document.querySelector('#scroller').addEventListener('click', function () { window.scrollTo(0, 100); })
     </script>
 </body>
 
