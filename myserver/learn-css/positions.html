@@ -54,6 +54,21 @@
 
         // }
         document.querySelector('#scroller').addEventListener('click', function () { window.scrollTo(0, 100); })
+
+        function greet(greeting) {
+            // something..?
+            console.log('outer function')
+            return function (name) {
+                console.log('inner function')
+                msg = greeting + ' ' + name;
+                console.log(msg.toUpperCase())
+            }
+        }
+
+        //  var returnedfunction = greet('hello'); // HELLO JACK
+
+        //  returnedfunction('jack');
+        greet('hello')('jack');
     </script>
 </body>
 

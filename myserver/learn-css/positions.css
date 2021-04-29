@@ -74,15 +74,10 @@
   padding-top: 10px;
   font-size: 12px;
   position: fixed;
-  bottom: 5px;
+  bottom: 1px;
   right: 5px;
   cursor: pointer;
   background: orange;
   border-radius: 50%;
   text-align: center;
-}
-
-#four {
-  position: absolute;
-  top: 200px;
 }

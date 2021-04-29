@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .effect {
+            animation: daynight 10s ease-in;
+        }
+
+        .sunset {
+
+            animation: sunset 10s;
+        }
+
+        @keyframes sunset {
+            from {
+                transform: translate(2px)
+            }
+
+            to {
+                transform: translate(100vw)
+            }
+
+        }
+
+        @keyframes moonrise {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        .moonrise {
+            animation: moonrise 10s;
+        }
+
+        @keyframes daynight {
+            0% {
+                background-color: skyblue;
+            }
+
+            30% {
+                background-color: #3e9dbc;
+            }
+
+            50% {
+                background-color: #f9f9e0;
+            }
+
+            75% {
+                background-color: #ef8a37;
+            }
+
+            100% {
+                background-color: #000;
+            }
+        }
+
+        body {
+            background: skyblue;
+        }
+
+        .sun img,
+        .moon img {
+            height: 100px;
+        }
+
+        .moon img {
+            opacity: 0;
+        }
+
+        .button {
+            position: fixed;
+            background: orange;
+            border-radius: 50%;
+            text-align: center;
+            color: white;
+            height: 70px;
+            width: 100px;
+            padding-top: 40px;
+            bottom: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="sun">
+        <img src="http://assets.stickpng.com/images/580b585b2edbce24c47b2714.png" alt="">
+    </div>
+    <div class="moon">
+        <img src="https://lh3.googleusercontent.com/proxy/2re-_zzx7hCWGhJXpdbRx6wRXNiYZb8WdpXq7DYLyq2vMaqS0RsbupPsE5hLxe4AaCGpF77i3SrWeP-Vi9Sahf9O1EMRunOl80lzfdxhO8GdkuAnuFIgn47f-fnVhthNetHml6u-ORrh5zeiIgwgNqG18__H8FjYw1s"
+            alt="">
+    </div>
+    <div class="button">
+        Start
+    </div>
+    <script>
+        document.querySelector('.button').addEventListener('click', function () {
+            document.querySelector('body').classList.add('effect');
+            document.querySelector('.sun img').classList.add('sunset')
+            document.querySelector('.moon img').classList.add('moonrise')
+        })
+    </script>
+</body>
+
+</html>

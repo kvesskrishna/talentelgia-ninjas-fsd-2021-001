@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .img {
+            transition-property: opacity;
+            transition-duration: 3s;
+            transition-timing-function: ease;
+            transition-delay: 1s;
+            opacity: 0;
+            /* transition: transform 5s ease-in-out; */
+            transform:
+                /* scale(2); */
+                /* translateY(40px); */
+                /* rotate(90deg); */
+                /* skew(-45deg); */
+                matrix(1, -0.3, 0, 1, 0, 0)
+        }
+
+        img:hover {
+            transform:
+                scale(2);
+        }
+
+        img {
+            transform: rotate(60deg)
+        }
+
+        .myimg {
+            /* transform: scale(1.5); */
+            margin: 100px;
+            width: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <img id="img" src="https://i.pinimg.com/originals/f8/f7/f6/f8f7f68b644b75cb3b3a052461c5b81c.png" alt="jar"
+        width="120px" class='myimg'>
+    <button>click me</button>
+    <script>
+        document.querySelector('button').addEventListener('click', function () {
+            console.log('button clicked')
+            document.querySelector('#img').classList.add('img');
+        })
+    </script>
+</body>
+
+</html>
