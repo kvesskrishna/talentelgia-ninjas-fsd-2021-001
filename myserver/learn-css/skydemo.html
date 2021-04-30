@@ -7,6 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
+        .nightbg {}
+
         .effect {
             animation: daynight 10s ease-in;
         }
@@ -30,10 +32,12 @@
         @keyframes moonrise {
             from {
                 opacity: 0;
+                transform: scale(0)
             }
 
             to {
                 opacity: 1;
+                transform: scale(2)
             }
         }
 
@@ -60,6 +64,8 @@
 
             100% {
                 background-color: #000;
+                background-image: url('https://dm0qx8t0i9gc9.cloudfront.net/thumbnails/video/rN0W64K4ipau8gxv/videoblocks-holiday-greeting-video-card-animation-with-twinkling-stars-and-with-sparkling-background_rqnb2iz_b_thumbnail-1080_01.png');
+                background-size: contain;
             }
         }
 
@@ -87,10 +93,49 @@
             padding-top: 40px;
             bottom: 30px;
         }
+
+        .mountains img {
+
+            width: 100vw;
+        }
+
+        .mountains2 img {
+            animation: nighthill 10s
+        }
+
+        @keyframes nighthill {
+            from {
+                filter: grayscale(0%)
+            }
+
+            to {
+                filter: grayscale(100%)
+            }
+        }
+
+        .shinchan img {
+            height: 100px;
+            position: absolute;
+            bottom: 0px;
+        }
+
+        .shinchanmove {
+            animation: moveshinchan 10s;
+        }
+
+        @keyframes moveshinchan {
+            from {
+                left: 0px
+            }
+
+            to {
+                left: 100vw
+            }
+        }
     </style>
 </head>
 
-<body>
+<body class="nightbg">
     <div class="sun">
         <img src="http://assets.stickpng.com/images/580b585b2edbce24c47b2714.png" alt="">
     </div>
@@ -98,14 +143,25 @@
         <img src="https://lh3.googleusercontent.com/proxy/2re-_zzx7hCWGhJXpdbRx6wRXNiYZb8WdpXq7DYLyq2vMaqS0RsbupPsE5hLxe4AaCGpF77i3SrWeP-Vi9Sahf9O1EMRunOl80lzfdxhO8GdkuAnuFIgn47f-fnVhthNetHml6u-ORrh5zeiIgwgNqG18__H8FjYw1s"
             alt="">
     </div>
+    <div class="mountains">
+        <img src="https://lh3.googleusercontent.com/proxy/Z6GHNXzMmmk_j717RdSnS-f9i6fceprCvl8DqDfKdNt9HUuAwl1VR2QUTYJbADAmiiJgFRYz0sVXLpgDx1yqJENX7_XsP_pleEjUerWQJWhPnjpuiGfEayDIb56Si8g2Tw"
+            alt="">
+    </div>
     <div class="button">
         Start
+    </div>
+    <div class="shinchan">
+
+        <img src="https://static.wikia.nocookie.net/crayonshinchan/images/6/6d/SHIN.png/revision/latest?cb=20200609184539"
+            alt="">
     </div>
     <script>
         document.querySelector('.button').addEventListener('click', function () {
             document.querySelector('body').classList.add('effect');
             document.querySelector('.sun img').classList.add('sunset')
             document.querySelector('.moon img').classList.add('moonrise')
+            document.querySelector('.mountains').classList.add('mountains2')
+            document.querySelector('.shinchan img').classList.add('shinchanmove')
         })
     </script>
 </body>

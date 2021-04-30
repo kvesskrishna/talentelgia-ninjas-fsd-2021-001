@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @media (max-width: 600px) {
+            .content {
+                flex-direction: column;
+            }
+
+            aside {
+
+                width: 100%;
+            }
+
+            main {
+                width: 100%;
+            }
+        }
+
+        nav {
+            background-color: yellow;
+            padding: 10px
+        }
+
+        nav ul {
+            list-style: '|';
+
+        }
+
+        nav ul li {
+            display: inline;
+
+        }
+
+        aside {
+            background-color: maroon;
+            color: white;
+            width: 20%;
+        }
+
+        main {
+            width: 60%;
+            padding: 10px
+        }
+
+        footer {
+            background-color: black;
+            font-size: 8px;
+            color: white;
+        }
+
+        main section header {
+            background-color: grey;
+            color: white;
+            text-transform: uppercase;
+        }
+
+        article {
+            color: #333;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            font-size: 14px;
+            padding: 12px;
+
+        }
+
+        aside ul {
+            list-style: square
+        }
+
+        aside header {
+            background-color: orange;
+        }
+
+        .content {
+            display: flex;
+            height: 80vh;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+        <section class="content">
+            <aside>
+                <header>Dates</header>
+                <section>
+                    <ul>
+                        <li><a href="#">April 2021</a></li>
+                        <li><a href="#">March 2021</a></li>
+                        <li><a href="#">February 2021</a></li>
+                    </ul>
+                </section>
+            </aside>
+            <main>
+                <section>
+                    <header>My Slide Show</header>
+                    <div>SLIDE SHOW...</div>
+                    <article>Some article about slide show</article>
+                </section>
+                <section>
+                    <header>My Recent Holiday</header>
+                    <article>About holiday
+                        <br>
+                        <video src="./video.mp4"></video>
+                        <audio src="./video.mp3"></audio>
+                    </article>
+                </section>
+                <section>
+                    <header>Recommendations</header>
+                    <article>Recommendation 1</article>
+                    <article>Recommendation 2</article>
+                    <article>Recommendation 3</article>
+                </section>
+            </main>
+            <aside>
+                <header>Archives</header>
+                <section>
+                    <ul>
+                        <li><a href="#">2021</a></li>
+                        <li><a href="#">2020</a></li>
+                        <li><a href="#">2019</a></li>
+                    </ul>
+                </section>
+            </aside>
+        </section>
+        <footer>
+            <sub>Designed by Krishna</sub>
+        </footer>
+    </div>
+</body>
+
+
+</html>
